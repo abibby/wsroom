@@ -6,7 +6,6 @@ COPY go.mod go.sum ./
 RUN go mod download
 
 COPY . .
-COPY --from=ui /dist ui/dist
 
 RUN GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -o /wsroom
 
